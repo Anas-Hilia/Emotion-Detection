@@ -112,7 +112,7 @@ Sad | Angry | Surprised
   <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic10.png?raw=true">
 </div>
 
-### When we click on video icon button ,the app start <span style="color: blue "> the camera view activity</span> :
+### When we click on video icon button ,the app starts <strong> the camera view activity</strong> :
 
 **2. CameraView Activity** 
 - The second layout which contains the image view  where we display the bitmap got from camera continuously sequentially and we display the result too. <br>
