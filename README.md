@@ -1,8 +1,9 @@
 # Emotion Detection App
+- The application «EMOTIONS DETECTION» realized is an Android  mobile application which detects and interprets a person's emotions,  and displays all the probabilities of each emotion, either from a photo  or from a video camera (real-time) using trained data.
 ## Emotion Recognition from Facial Expression 
 - The project aims to train a model using tensorflow for facial emotion detection and used the trained model as predictor in android facial expression recongnition app.
 - The project is Java-Machine Learning and it aims to classify the  emotion of a person's face into one of seven categories, using the  trained model as predictor, the model is trained using Tensorflow lite  and the dataset contain many 48x48 pixel faces expressing each  emotion from the seven ones: angry, disgusted, fearful, happy,  neutral, sad and surprised.
-- The application «EMOTIONS DETECTION» realized is an Android  mobile application which detects and interprets a person's emotions,  and displays all the probabilities of each emotion, either from a photo  or from a video camera (real-time) using trained data.
+
 
 - The model is trained using  tensorflow python framework and used in android application where the basic langauge is java. 
 
