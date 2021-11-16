@@ -1,62 +1,53 @@
 # Emotion Detection App
 ## Emotion Recognition from Facial Expression 
+- The project aims to train a model using tensorflow for facial emotion detection and used the trained model as predictor in android facial expression recongnition app.
+- The project is Java-Machine Learning and it aims to classify the  emotion of a person's face into one of seven categories, using the  trained model as predictor, the model is trained using Tensorflow lite  and the dataset contain many 48x48 pixel faces expressing each  emotion from the seven ones: angry, disgusted, fearful, happy,  neutral, sad and surprised.
+- The application «EMOTIONS DETECTION» realized is an Android  mobile application which detects and interprets a person's emotions,  and displays all the probabilities of each emotion, either from a photo  or from a video camera (real-time) using trained data.
 
-The project aims to train a model using tensorflow for facial emotion detection and used the trained model 
-as predictor in android facial expression recongnition app.
+- The model is trained using  tensorflow python framework and used in android application where the basic langauge is java. 
 
-The model is trained using  tensorflow python framework and used in android application where the basic langauge is java. 
+- Basically tensorflow provides a c++ api, that can be used in android application. The trained model by python langauge can be integrated with android project  after inclduing tensorflow c++ framework dependencies and using native interface the model can be loaded and called in java class. This is the whole thing. 
 
-Basically tensorflow provides a c++ api, that can be used in android application. The trained model by python langauge can be integrated with android project  after inclduing tensorflow c++ framework dependencies and using native interface the model can be loaded and called in java class. This is the whole thing. 
-
-The total work of this project is divided into two parts 
-1) Devlop  a model in tensoflow using python langauge
+## The total work of this project is divided into two parts :
+1) Develop a <strong> Model </strong> in tensoflow from a <strong> DataSet </strong> using python langauge
   
-   **KaggleFaceEmotionRecognition** folder contains the work 
-2) Devlop an android appication for facial expression recongtion 
+2) Develop an android appication for facial expression recongtion 
   
-   **FaceDetectionApp** folder contains the work 
-
-
 ### Part 1. Facial Expression Recongition Model developed in Tensorflow 
 
 In this work , I have used a simple Convolutional Neural Network Architecture to train a facial expression dataset.
 
-**1. DataSet:** The dataset is collected from Facial xpression recognition challenge  in kaggle
+**1. DataSet:** The dataset is collected from Facial expression recognition challenge in kaggle
 The challenge link https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/
 
-The data consists of 48x48 pixel grayscale images of faces.The dataset contains facial expression  of seven categories (0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral
+The data consists of 48x48 pixel grayscale images of faces.<br>
+The dataset contains facial expression of seven categories (Uncertain, Angry, Disgusted, Fearful, Happy, Neutral, Sad, Surprised).
 
-**2. Model:** 
-
-    In this work I have used the below CNN model 
-    
-      input_image->conv2d->pooling->conv2d->pooling->conv2d->pooling->dropout->softmax
-      
-   The code fragment
+**2. Model:**
+  
+   We generated the <strong> Model </strong> from the <strong> DataSet </strong> using Python :
+   <br>
    
-    ```
-    x_image = tf.reshape(x, [-1, 48, 48, 1])
-        #48*48*1
-        conv1 = tf.layers.conv2d(x_image, 64, 3, 1, 'same', activation=tf.nn.relu)
-        #48*48*64
-        pool1 = tf.layers.max_pooling2d(conv1, 2, 2, 'same')
-        #24*24*64
-        conv2 = tf.layers.conv2d(pool1, 128, 3, 1, 'same', activation=tf.nn.relu)
-        #24*24*128
-        pool2 = tf.layers.max_pooling2d(conv2, 2, 2, 'same')
-        #12*12*128
-        conv3 = tf.layers.conv2d(pool2, 256, 3, 1, 'same', activation=tf.nn.relu)
-        #12*12*256
-        pool3 = tf.layers.max_pooling2d(conv3, 2, 2, 'same')
-        #6*6*256
-        flatten = tf.reshape(pool3, [-1, 6*6*256])
-        fc = tf.layers.dense(flatten, 1536, activation=tf.nn.relu)
-        dropout = tf.nn.dropout(fc, keep_prob)
-        logits = tf.layers.dense(dropout, 7)
-        outputs = tf.nn.softmax(logits, name=output_node_name)
+    ``` from tflite_model_maker import image_classifier
+    from tflite_model_maker.image_classifier import DataLoader
+
+    # Load input data specific to an on-device ML app.
+    data = DataLoader.from_folder('EmotionsFaces/')
+    train_data, test_data = data.split(0.9)
+
+    # Customize the TensorFlow model.
+    model = image_classifier.create(train_data)
+
+    # Evaluate the model.
+    loss, accuracy = model.evaluate(test_data)
+
+    # Export to Tensorflow Lite model and label file in `export_dir`.
+    model.export(export_dir='/tmp/')
         ```
   
-**3. Result:** I have used 5000 iterations with batch size 100 and restore the model in protocal buffer file
+**3. Result:** 
+The folder contains the generated <strong> model </strong> and <strong> Label </strong> : <br>
+    https://github.com/Anas-Hilia/Emotion-Detection/tree/master/app/src/main/assets
 
 ### Part 2.  Facial Expression Recongition Application in Android
 
@@ -85,32 +76,47 @@ dependencies {
 }
 ```
 
+## Grafical Interface of The App : 
+
+**1. Main Activity**
+- The first layout which contain the image view where we  display the bitmap that we worked on and all buttons (icon format) that  assure the interaction between the user and the app : <br>
+<div align="center">
+  <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic1.png?raw=true">
+</div>
+
+### When we click on picture icon button ,the app give us to choose between Taking photo, choose it from gallery or cancel:
+
+<div align="center">
+  <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic2.png?raw=true">
+</div>
+
+### When we chose the picture we display it first ... Then :
+
+1) If the picture contain face we classify it and we display the result  probabilities : <br>
+
+Fearful | Happy | Neutral 
+--- | --- | --- 
+<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic3.png?raw=true">|<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic4.png?raw=true">|<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic5.png?raw=true">
+<br>
+
+Sad | Angry | Surprised 
+--- | --- | --- 
+<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic6.png?raw=true">|<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic7.png?raw=true">|<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic8.png?raw=true">
+<br>
 
 
-**1. Designing the UI Components**
+2) If not we display that message (No face detected in picture) : <br>
+<div align="center">
+  <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic9.png?raw=true">
+  <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic10.png?raw=true">
+</div>
 
-Home Screen look like this
+### When we click on video icon button ,the app start <span style="color: blue "> the camera view activity</span> :
 
-After taking a picture 
-
-
-And the final result 
-
-
-
-
-**2. Interacting with the Tensorflow Native Api**
-
-The *org.tensorflow.contrib.android.TensorFlowInferenceInterface* handles all necessary operation to interact with native api. See more details in https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/android
-
-**3. Finalizing the work** 
-
-There are lots of options for improvement.
- 1. Adding some cool features and increasing model performance using another models
- 2. Tuning the hyperparameters of used cnn model 
-
-
-
-
+**2. CameraView Activity** 
+- The second layout which contains the image view  where we display the bitmap got from camera continuously sequentially and we display the result too. <br>
+<div align="center">
+    <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshoots/pic11.png?raw=true">
+</div>
 
 
