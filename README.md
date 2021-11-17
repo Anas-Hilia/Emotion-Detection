@@ -78,8 +78,11 @@ dependencies {
 ```
 
 ## Grafical Interface of The App : 
-
-**1. Main Activity**
+**1. App Logo**
+  <div align="center">
+  <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic0.png?raw=true">
+</div>
+**2. Main Activity**
 - The first layout which contain the image view where we  display the bitmap that we worked on and all buttons (icon format) that  assure the interaction between the user and the app : <br>
 <div align="center">
   <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic1.png?raw=true">
@@ -114,7 +117,7 @@ Sad | Angry | Surprised
 
 ### When we click on video icon button ,the app starts the camera view activity :
 
-**2. CameraView Activity** 
+**3. CameraView Activity** 
 - The second layout which contains the image view  where we display the bitmap got from camera continuously sequentially and we display the result too. <br>
 <div align="center">
     <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic11.png?raw=true">
