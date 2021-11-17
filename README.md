@@ -4,6 +4,8 @@
 - The project aims to train a model using tensorflow for facial emotion detection and used the trained model as predictor in android facial expression recongnition app.
 - The project is Java-Machine Learning and it aims to classify the  emotion of a person's face into one of seven categories, using the  trained model as predictor, the model is trained using Tensorflow lite  and the dataset contain many 48x48 pixel faces expressing each  emotion from the seven ones: angry, disgusted, fearful, happy,  neutral, sad and surprised.
 
+## The Review
+### [Watch-the-video](https://www.youtube.com/watch?v=vzW9W4gemw8) 
 
 - The model is trained using  tensorflow python framework and used in android application where the basic langauge is java. 
 
@@ -80,18 +82,19 @@ dependencies {
 ## Grafical Interface of The App : 
 **1. App Logo**
   <div align="center">
-  <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic0.jpg?raw=true">
-</div>
+    <img width="250" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic0.jpg?raw=true">
+  </div>
+  
 **2. Main Activity**
 - The first layout which contain the image view where we  display the bitmap that we worked on and all buttons (icon format) that  assure the interaction between the user and the app : <br>
 <div align="center">
-  <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic1.jpg?raw=true">
+  <img height="600" width="310" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic1.jpg?raw=true">
 </div>
 
 ### When we click on picture icon button ,the app give us to choose between Taking photo, choose it from gallery or cancel:
 
 <div align="center">
-  <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic2.jpg?raw=true">
+  <img height="600" width="310" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic2.jpg?raw=true">
 </div>
 
 ### When we chose the picture we display it first ... Then :
@@ -100,19 +103,19 @@ dependencies {
 
 Fearful | Happy | Neutral 
 --- | --- | --- 
-<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic3.jpg?raw=true">|<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic4.jpg?raw=true">|<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic5.jpg?raw=true">
+<img height="600" width="310" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic3.jpg?raw=true">|<img height="600" width="310" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic4.jpg?raw=true">|<img height="600" width="310" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic5.jpg?raw=true">
 <br>
 
 Sad | Angry | Surprised 
 --- | --- | --- 
-<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic6.jpg?raw=true">|<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic7.jpg?raw=true">|<img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic8.jpg?raw=true">
+<img height="600" width="310" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic6.jpg?raw=true">|<img height="600" width="310" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic7.jpg?raw=true">|<img height="600" width="310" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic8.jpg?raw=true">
 <br>
 
 
 2) If not we display that message (No face detected in picture) : <br>
 <div align="center">
-  <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic9.jpg?raw=true">
-  <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic10.jpg?raw=true">
+  <img height="600" width="310" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic9.jpg?raw=true">
+  <img height="600" width="310" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic10.jpg?raw=true">
 </div>
 
 ### When we click on video icon button ,the app starts the camera view activity :
@@ -120,7 +123,7 @@ Sad | Angry | Surprised
 **3. CameraView Activity** 
 - The second layout which contains the image view  where we display the bitmap got from camera continuously sequentially and we display the result too. <br>
 <div align="center">
-    <img src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic11.jpg?raw=true">
+    <img height="600" width="310" src="https://github.com/Anas-Hilia/Emotion-Detection/blob/master/screenshots/pic11.jpg?raw=true">
 </div>
 
 
