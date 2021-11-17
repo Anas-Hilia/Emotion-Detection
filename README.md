@@ -4,12 +4,12 @@
 - The project aims to train a model using tensorflow for facial emotion detection and used the trained model as predictor in android facial expression recongnition app.
 - The project is Java-Machine Learning and it aims to classify the  emotion of a person's face into one of seven categories, using the  trained model as predictor, the model is trained using Tensorflow lite  and the dataset contain many 48x48 pixel faces expressing each  emotion from the seven ones: angry, disgusted, fearful, happy,  neutral, sad and surprised.
 
-## The Review
-### [Watch-the-video](https://www.youtube.com/watch?v=vzW9W4gemw8) 
-
 - The model is trained using  tensorflow python framework and used in android application where the basic langauge is java. 
 
 - Basically tensorflow provides a c++ api, that can be used in android application. The trained model by python langauge can be integrated with android project  after inclduing tensorflow c++ framework dependencies and using native interface the model can be loaded and called in java class. This is the whole thing. 
+
+## The Review
+### [Watch-the-video](https://www.youtube.com/watch?v=vzW9W4gemw8) 
 
 ## The total work of this project is divided into two parts :
 1) Develop a <strong> Model </strong> in tensoflow from a <strong> DataSet </strong> using python langauge
